@@ -30,7 +30,7 @@ opt.rand_offset_folder = os.path.join(gs.ckpt_path, 'FFAPCFIDP_random_offset')  
 opt.mode = 'eval'
 opt.save_im = False
 
-opt.dataset_path = os.path.join(gs.data_path, 'Fundus Fluorescein Angiogram Photographs & Colour Fundus Images of Diabetic Patients')
+opt.dataset_path = os.path.join(gs.data_path, 'FFAPCFIDP')
 opt.csv_path = os.path.join(gs.proj_path, 'FFAPCFIDP_affine.csv')
 
 # name = 'icip_train'
