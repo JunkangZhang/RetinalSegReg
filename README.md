@@ -57,12 +57,15 @@ Requirement: scikit-image <br>
 ### 2.3 Computing Dice
 Requirement: Matlab <br>
 (1) Download matlab codes for [B-cosfire](https://www.mathworks.com/matlabcentral/fileexchange/49172-trainable-cosfire-filters-for-curvilinear-structure-delineation-in-images) and extract them into `./matlab/`. <br>
-(2) Run `matlab/bcosf_get.m` to obtain segmentation responses. It took ~9 minutes on a platform with Intel Core i7-7700K and Matlab 2017b. The generated folder `./ckpt/FFAPCFIDP_random_offset_bcosfire` will take ~600MB on the disk. <br>
+(2) Run `matlab/bcosf_get.m` to obtain segmentation responses. It took ~9 minutes on a platform with Intel Core i7-7700K and Matlab 2017b. The generated folder `./ckpt/FFAPCFIDP_random_offset_bcosfire/` will take ~600MB on the disk. <br>
 (Optional) If your platform has insufficient memory, switch `parfor` to `for` on line #46 (and it will be much slower) <br>
 (3) Run `dice.py`. 
 
+
 ## 3. Training
-To be added. 
+Run `train_2steps.bat` to get the model in the paper. Or run `train_step1.py` and `train_step2.py` sequentially by hand. <br>
+(Optional) One can try squared L2 smoothness loss by running `train.py`. 
+
 
 ## Reference
 To be added
