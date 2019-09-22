@@ -1,7 +1,7 @@
-# Multi-Modal Retinal Image Registration via Style Transfer
+# Joint Vessel Segmentation and Deformable Registration <br> on Multi-Modal Retinal Images based on Style Transfer
 
 **Joint Vessel Segmentation and Deformable Registration on Multi-Modal Retinal Images based on Style Transfer** <br>
-\[[Paper \(IEEEXplore\)](https://ieeexplore.ieee.org/document/8802932)\] <br>
+\[[Paper \(IEEEXplore\)](https://ieeexplore.ieee.org/document/8802932)\] \[[Supplementary pdf]()\] \[[Slides]()\] <br>
 Junkang Zhang, 
 Cheolhong An, 
 [Ji Dai](https://jidai-code.github.io/), 
@@ -10,8 +10,17 @@ Dirk-Uwe Bartsch,
 Shyamanga Borooah, 
 William R. Freeman, 
 and [Truong Q. Nguyen](https://jacobsschool.ucsd.edu/faculty/faculty_bios/index.sfe?fmp_recid=48). <br>
-Accepted by IEEE International Conference on Image Processing (ICIP), 2019. 
+IEEE International Conference on Image Processing (ICIP), 2019. 
 
+```
+@inproceedings{Zhang:2019:ICIP:Retinal,
+  author={Junkang Zhang and Cheolhong An and Ji Dai and Manuel Amador and Dirk-Uwe Bartsch and Shyamanga Borooah and William R. Freeman and Truong Q. Nguyen},
+  booktitle={2019 IEEE International Conference on Image Processing (ICIP)},
+  title={Joint Vessel Segmentation and Deformable Registration on Multi-Modal Retinal Images Based on Style Transfer},
+  year={2019},
+  pages={839-843}
+}
+```
 
 ## 1. Basic Setups
 ### 1.1 Environments
@@ -26,7 +35,7 @@ Download 2 files from [Fundus Fluorescein Angiogram Photographs & Colour Fundus 
 **NOTE #2**: The pair of `30-30.jpg` & `30.jpg` in `./retina/FFAPCFIDP/normal/` is not used due to wrong image. <br>
 **NOTE #3**: It seems the folders' names has been changed to upper cases in the latest version. Please change them to lower cases on Linux-based systems. <br>
 
-In this dataset, pairs with odd numbers are used for training, and ones with even numbers are for evaluation. 
+In this dataset, pairs with odd numbers are for training and even numbers are for evaluation. 
 
 #### (2) Coarse alignment for images pairs
 For each pair of images, we obtain the coarse alignment as an affine transformation matrix (2\*3) which is based on 3 pairs of manually labeled corresponding points. The matrices are stored in [`FFAPCFIDP_affine.csv`](https://github.com/JunkangZhang/RetinalSegReg/blob/master/FFAPCFIDP_affine.csv).  <br>
@@ -43,15 +52,14 @@ Only one segmentation map is used as a style target. Binary/probability maps fro
 
 ### 2.2 Computing Soft Dice
 Requirement: scikit-image <br>
-Run `dice_s.py`.
+(1) Run `dice_s.py`.
 
 ### 2.3 Computing Dice
-Requirements: Matlab
-
-Obtain matlab codes for [B-cosfire](https://www.mathworks.com/matlabcentral/fileexchange/49172-trainable-cosfire-filters-for-curvilinear-structure-delineation-in-images)
-
-Run bcosf_get.m. If your platform has insufficient memory, switch parfor to for on line #46 (and it will be much slower). With parfor on, it took ~9 minutes on a platform with Intel Core i7-7700K and Matlab 2017b. The folder ./ckpt/FFAPCFIDP_random_offset_bcosfire will take ~600MB on the disk. 
-
+Requirement: Matlab <br>
+(1) Download matlab codes for [B-cosfire](https://www.mathworks.com/matlabcentral/fileexchange/49172-trainable-cosfire-filters-for-curvilinear-structure-delineation-in-images) and extract them into `./matlab/`. <br>
+(2) Run `matlab/bcosf_get.m` to obtain segmentation responses. It took ~9 minutes on a platform with Intel Core i7-7700K and Matlab 2017b. The generated folder `./ckpt/FFAPCFIDP_random_offset_bcosfire` will take ~600MB on the disk. <br>
+(Optional) If your platform has insufficient memory, switch `parfor` to `for` on line #46 (and it will be much slower) <br>
+(3) Run `dice.py`. 
 
 ## 3. Training
 To be added. 
