@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 import os, time
+import scipy.io as sio
 
 from RetSegReg import options, RetSegReg
 from globalsetting import globalsetting
