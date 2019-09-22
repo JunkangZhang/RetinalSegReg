@@ -37,7 +37,7 @@ Only one segmentation map is used as a style target. Binary/probability maps fro
 
 ## 2. Evaluation on a pretrained model
 ### 2.1 Getting results on test set
-(1) Run `andflow.py` to generate random flow masp to simulate larger misalignment between the input images pairs. The generated folder `./ckpt/FFAPCFIDP_random_offset` will take ~1.3GB on the disk.  <br>
+(1) Run `randflow.py` to generate random flow masp to simulate larger misalignment between the input images pairs. The generated folder `./ckpt/FFAPCFIDP_random_offset` will take ~1.3GB on the disk.  <br>
 (2) Download the pretrained model ([Google Drive](https://drive.google.com/file/d/1iNS-2war7jGdS-i5twadZZ14LXUWR0Rw/view?usp=sharing)). Place it into `./ckpt/icip_reported/`.  <br>
 (3) Run `eval.py` to obtain registration fields on the image pairs. The generated folder `./ckpt/Prediction_icip_reported/` will take ~400MB with `opt.save_im=False`.  <br>
 
