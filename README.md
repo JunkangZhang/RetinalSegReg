@@ -16,9 +16,12 @@ IEEE International Conference on Image Processing (ICIP), 2019. <br>
 \[[Slides (to be uploaded)]()\] <br>
 
 
-## 1. Basic Setups
+## Contents
+- [Setups](#setups)
+
+## 1. Setups <a name="setups"></a>
 ### 1.1 Environments
-**Requirements**: <br>
+**Basic requirements**: <br>
 python3 (Anaconda) <br>
 pytorch (Version 0.4.1 was used for this project. Version 1.1.0 should also work) <br>
 [pytorch_ssim](https://github.com/Po-Hsun-Su/pytorch-ssim) ([instructions](https://github.com/JunkangZhang/RetinalSegReg/blob/master/pytorch_ssim/readme.md)) <br>
