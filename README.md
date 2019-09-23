@@ -33,7 +33,7 @@ pytorch (Version 0.4.1 was used for this project. Version 1.1.0 should also work
 
 **Requirements (optional)**: <br>
 scikit-image (for Dice_s) <br>
-MATLAB (for Dice, Phase+MIND) <br>
+MATLAB (for Dice & Phase+MIND) <br>
 
 **Hardwares**: <br>
 Our platform: Intel Core i7-7700K, nVidia GTX 1080Ti, Windows 10 64-bit, Python 3.6 (Anaconda), Matlab 2017b <br>
@@ -47,7 +47,7 @@ Download 2 files from [Fundus Fluorescein Angiogram Photographs & Colour Fundus 
 **NOTE #2**: The pair of `30-30.jpg` & `30.jpg` in `./retina/FFAPCFIDP/normal/` is not used due to wrong image. <br>
 **NOTE #3**: It seems the folders' names has been changed to upper cases in the latest version. Please change them to lower cases on Linux-based systems. <br>
 
-For this dataset, we use pairs with odd numbers for training and even numbers for testing. 
+For this dataset, we use pairs with odd indices for training and even ones for testing. 
 
 #### (2) Coarse alignment for images pairs
 For each pair of images, we obtain the coarse alignment as an affine transformation matrix (2\*3) which is based on 3 pairs of manually labeled corresponding points. The matrices are stored in [`FFAPCFIDP_affine.csv`](https://github.com/JunkangZhang/RetinalSegReg/blob/master/FFAPCFIDP_affine.csv).  <br>
