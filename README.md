@@ -30,6 +30,8 @@ python3 (Anaconda) <br>
 pytorch (Version 0.4.1 was used for this project. Version 1.1.0 should also work) <br>
 [pytorch_ssim](https://github.com/Po-Hsun-Su/pytorch-ssim) ([instructions](https://github.com/JunkangZhang/RetinalSegReg/blob/master/pytorch_ssim/readme.md)) <br>
 
+Our platform: Intel Core i7-7700K, nVidia GTX 1080Ti, Windows 10 64-bit, Python 3.6 (Anaconda), Matlab 2017b
+
 ### 1.2 Datasets
 #### (1) Multi-Modal Retinal Dataset
 Download 2 files from [Fundus Fluorescein Angiogram Photographs & Colour Fundus Images of Diabetic Patients](https://sites.google.com/site/hosseinrabbanikhorasgani/datasets-1/fundus-fluorescein-angiogram-photographs--colour-fundus-images-of-diabetic-patients). Unzip them into `./retina/FFAPCFIDP/`. <br>
@@ -53,15 +55,24 @@ Only one segmentation map is used as a style target. Binary/probability maps fro
 (3) Run `eval.py` to obtain registration fields on the image pairs. The generated folder `./ckpt/Prediction_icip_reported/` will take ~400MB with `opt.save_im=False`.  <br>
 
 ### 2.2 Computing Soft Dice
-Requirement: scikit-image <br>
+Additional requirement: scikit-image <br>
 (1) Run `dice_s.py`.
 
 ### 2.3 Computing Dice
-Requirement: Matlab <br>
-(1) Download matlab codes for [B-cosfire](https://www.mathworks.com/matlabcentral/fileexchange/49172-trainable-cosfire-filters-for-curvilinear-structure-delineation-in-images) and extract them into `./matlab/`. <br>
-(2) Run `matlab/bcosf_get.m` to obtain segmentation responses. It took ~9 minutes on a platform with Intel Core i7-7700K and Matlab 2017b. The generated folder `./ckpt/FFAPCFIDP_random_offset_bcosfire/` will take ~600MB on the disk. <br>
-(Optional) If your platform has insufficient memory, switch `parfor` to `for` on line #46 (and it will be much slower) <br>
+Additional requirement: Matlab <br>
+(1) Download matlab codes of [B-cosfire](https://www.mathworks.com/matlabcentral/fileexchange/49172-trainable-cosfire-filters-for-curvilinear-structure-delineation-in-images) and extract them into `./matlab/`. <br>
+(2) Run `matlab/bcosf_get.m` to obtain segmentation responses. It took ~9 minutes on our platform. The generated folder `./ckpt/FFAPCFIDP_random_offset_bcosfire/` will take ~600MB on the disk. <br>
+(Optional) If system memory is not enough, switch `parfor` to `for` on line #46 (and it will be much slower) <br>
 (3) Run `dice.py`. 
+
+### 2.4 Getting results for Phase+MIND (optional)
+(1) Download matlab codes of [monogenic_signal_matlab](https://github.com/CPBridge/monogenic_signal_matlab) and extract them into `./matlab/`. <br>
+(2) Download matlab codes of [MIND](http://www.ibme.ox.ac.uk/research/biomedia/julia-schnabel/files/gn-mind2d.zip/view) and extract them into `./matlab/`. <br>
+Then compile `pointsor.cpp` (enter the codes' folder and run `mex pointsor.cpp`). <br>
+(Optional) In `./matlab/GN-MIND2d/deformableReg2Dmind.m`, comment lines # 18, 60 & 61 to disable plotting. <br>
+(3) Run `./matlab/getmind2.m`. It took ~23 minutes on our platform. The results will be stored in `./ckpt/FFAPCFIDP_random_offset_phase-mind`. <br>
+(Optional) If system memory runs out, switch `parfor` to `for` on line #22 (and it will be much slower). <br>
+(4) Do **2.2** & **2.3** to get measurements. Modify the codes as `method = 'mind'` on line #11 of `dice.py` and line #115 of `dice_s.py`. 
 
 
 ## 3. Training
