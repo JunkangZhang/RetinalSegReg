@@ -83,7 +83,7 @@ Run `train_2steps.bat` to get the model in the paper. Or run `train_step1.py` an
 
 
 ## Possible issues & solutions
-We observed a drastic memory increase taken by the python process during training on a Ubuntu workstation with pytorch 0.4.0/0.4.1. An update to pytorch 1.1.0 solved the problem. 
+We observed a drastic memory increase taken by the python process during training on a Ubuntu workstation with pytorch 0.4.0/0.4.1 & cuda 8.0. An update to pytorch 1.1.0 & cuda 9.0 solved the problem. 
 
 
 ## Reference
