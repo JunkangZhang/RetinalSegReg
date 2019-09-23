@@ -46,7 +46,7 @@ For each pair of images, we obtain the coarse alignment as an affine transformat
 
 #### (3) Retinal Vessel Segmentation Dataset (for training only)
 We used [HRF](https://www5.cs.fau.de/research/data/fundus-images/). Download and unzip the Segmentation Dataset into  `./retina/HRF/`.  <br>
-Only one segmentation map is used as a style target. Binary/probability maps from other datasets also work. <br>
+Only one segmentation map `./retina/HRF/manual1/12_h.tif` is needed as a style target. Other files or binary/probability maps from other datasets also work. <br>
 
 ## 2. Evaluation on a pretrained model
 ### 2.1 Getting results on test set
