@@ -48,8 +48,8 @@ For each pair of images, we obtain the coarse alignment as an affine transformat
 We used [HRF](https://www5.cs.fau.de/research/data/fundus-images/) [2]. Download and unzip the Segmentation Dataset into  `./retina/HRF/`.  <br>
 Only one segmentation map `./retina/HRF/manual1/12_h.tif` is needed as a style target. Other files or binary/probability maps from other datasets also work. <br>
 
-## 2. Evaluation on a trained model
-### 2.1 Getting results on test set
+## 2. Evaluation
+### 2.1 Getting results on a trained model
 (1) Run `randflow.py` to generate random flow maps to simulate larger misalignment between the input images pairs. The generated folder `./ckpt/FFAPCFIDP_random_offset/` will take ~1.3GB on the disk.  <br>
 (2) Download the pretrained model \([Google Drive](https://drive.google.com/file/d/1iNS-2war7jGdS-i5twadZZ14LXUWR0Rw/view?usp=sharing)\). Place it into `./ckpt/icip_reported/`.  <br>
 If Google Drive cannot be accessed, please try [Baidu Wangpan](https://pan.baidu.com/s/1vA6alBhSppZFhdRu00UpGA) (access code: ryg6). <br>
