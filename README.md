@@ -18,6 +18,11 @@ IEEE International Conference on Image Processing (ICIP), 2019. <br>
 
 ## Contents
 - [Setups](#setups)
+- [Evaluation](#evaluation)
+- [Training](#training)
+- [Possible issues & solutions](#solutions)
+- [Citation](#citation)
+- [Reference](#reference)
 
 ## 1. Setups <a name="setups"></a>
 ### 1.1 Environments
@@ -51,7 +56,7 @@ For each pair of images, we obtain the coarse alignment as an affine transformat
 We used [HRF](https://www5.cs.fau.de/research/data/fundus-images/) [2]. Download and unzip the Segmentation Dataset into  `./retina/HRF/`.  <br>
 Only one segmentation map `./retina/HRF/manual1/12_h.tif` is needed as a style target. Other files or binary/probability maps from other datasets also work. <br>
 
-## 2. Evaluation
+## 2. Evaluation <a name="evaluation"></a>
 ### 2.1 Getting results on a trained model
 (1) Run `randflow.py` to generate random flow maps to simulate larger misalignment between the input images pairs. The generated folder `./ckpt/FFAPCFIDP_random_offset/` will take ~1.3GB on the disk.  <br>
 (2) Download the pretrained model \([Google Drive](https://drive.google.com/file/d/1iNS-2war7jGdS-i5twadZZ14LXUWR0Rw/view?usp=sharing)\). Place it into `./ckpt/icip_reported/`.  <br>
@@ -79,17 +84,17 @@ Then compile `pointsor.cpp` (enter the codes' folder and run `mex pointsor.cpp`)
 (4) Do **2.2** & **2.3** to get measurements. Modify the codes as `method = 'mind'` on line #11 of `dice.py` and line #115 of `dice_s.py`. 
 
 
-## 3. Training
+## 3. Training <a name="training"></a>
 Run `train_2steps.bat` to get the model in the paper. Or run `train_step1.py` and `train_step2.py` sequentially by hand. <br>
 
 One can try squared L2 smoothness loss by running `train.py`. <br>
 
 
-## Possible issues & solutions
+## Possible issues & solutions <a name="solutions"></a>
 We observed a drastic memory increase taken by the python process during training on a Ubuntu workstation with pytorch 0.4.0/0.4.1. An update to pytorch 1.1.0 solved the problem. 
 
 
-## Citation
+## Citation <a name="citation"></a>
 ```
 @inproceedings{Zhang:2019:ICIP:Retinal,
   author={Junkang Zhang and Cheolhong An and Ji Dai and Manuel Amador and Dirk-Uwe Bartsch and Shyamanga Borooah and William R. Freeman and Truong Q. Nguyen},
@@ -101,7 +106,7 @@ We observed a drastic memory increase taken by the python process during trainin
 ```
 
 
-## Reference
+## Reference <a name="reference"></a>
 [1] Shirin Hajeb Mohammad Alipour, Hossein Rabbani, and Mohammad Reza Akhlaghi, “Diabetic retinopathy grading by digital curvelet transform,” Computational and mathematical methods in medicine, vol. 2012, pp. 1607–1614, 2012. <br>
 [2] Attila Budai, R¨udiger Bock, Andreas Maier, Joachim Hornegger, and Georg Michelson, “Robust vessel segmentation in fundus images,” International journal of biomedical imaging, vol. 2013, 2013. <br>
 [3] Michael Felsberg and Gerald Sommer, “The monogenic signal,” IEEE Transactions on Signal Processing, vol. 49, no. 12, pp. 3136–3144, 2001. <br>
