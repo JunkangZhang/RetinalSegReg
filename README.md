@@ -2,7 +2,7 @@
 
 **Joint Vessel Segmentation and Deformable Registration on Multi-Modal Retinal Images based on Style Transfer** <br>
 \[[Paper \(IEEEXplore\)](https://ieeexplore.ieee.org/document/8802932)\] &ensp; 
-\[[Supplementary pdf]()\] &ensp; 
+\[[Supplementary pdf](https://github.com/JunkangZhang/RetinalSegReg/blob/master/ICIP2019_supplementary.pdf)\] &ensp; 
 \[[Slides]()\] <br>
 Junkang Zhang, 
 Cheolhong An, 
