@@ -17,14 +17,14 @@ IEEE International Conference on Image Processing (ICIP), 2019. <br>
 
 
 ## Contents
-- [Setups](#setups)
+- [Setup](#setup)
 - [Evaluation](#evaluation)
 - [Training](#training)
 - [Possible issues & solutions](#solutions)
 - [Citation](#citation)
 - [Reference](#reference)
 
-## 1. Setups <a name="setups"></a>
+## 1. Setup <a name="setup"></a>
 ### 1.1 Environments
 **Basic requirements**: <br>
 python3 (Anaconda) <br>
