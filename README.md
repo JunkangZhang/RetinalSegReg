@@ -50,7 +50,7 @@ Only one segmentation map is used as a style target. Binary/probability maps fro
 
 ## 2. Evaluation on a pretrained model
 ### 2.1 Getting results on test set
-(1) Run `randflow.py` to generate random flow masp to simulate larger misalignment between the input images pairs. The generated folder `./ckpt/FFAPCFIDP_random_offset` will take ~1.3GB on the disk.  <br>
+(1) Run `randflow.py` to generate random flow masp to simulate larger misalignment between the input images pairs. The generated folder `./ckpt/FFAPCFIDP_random_offset/` will take ~1.3GB on the disk.  <br>
 (2) Download the pretrained model ([Google Drive](https://drive.google.com/file/d/1iNS-2war7jGdS-i5twadZZ14LXUWR0Rw/view?usp=sharing)). Place it into `./ckpt/icip_reported/`.  <br>
 (3) Run `eval.py` to obtain registration fields on the image pairs. The generated folder `./ckpt/Prediction_icip_reported/` will take ~400MB with `opt.save_im=False`.  <br>
 
@@ -70,7 +70,7 @@ Additional requirement: Matlab <br>
 (2) Download matlab codes of [MIND](http://www.ibme.ox.ac.uk/research/biomedia/julia-schnabel/files/gn-mind2d.zip/view) and extract them into `./matlab/`. <br>
 Then compile `pointsor.cpp` (enter the codes' folder and run `mex pointsor.cpp`). <br>
 (Optional) In `./matlab/GN-MIND2d/deformableReg2Dmind.m`, comment lines # 18, 60 & 61 to disable plotting. <br>
-(3) Run `./matlab/getmind2.m`. It took ~23 minutes on our platform. The results will be stored in `./ckpt/FFAPCFIDP_random_offset_phase-mind`. <br>
+(3) Run `./matlab/getmind2.m`. It took ~23 minutes on our platform. The results will be stored in `./ckpt/FFAPCFIDP_random_offset_phase-mind/`. <br>
 (Optional) If system memory runs out, switch `parfor` to `for` on line #22 (and it will be much slower). <br>
 (4) Do **2.2** & **2.3** to get measurements. Modify the codes as `method = 'mind'` on line #11 of `dice.py` and line #115 of `dice_s.py`. 
 
