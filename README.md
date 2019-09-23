@@ -82,7 +82,7 @@ One can try squared L2 smoothness loss by running `train.py`. <br>
 
 
 ## Possible issues & solutions
-We observed a drastic memory increase taken by the python process during training on a Ubuntu workstation with pytorch 0.4.0/0.4.1 & cuda 8.0. An update to pytorch 1.1.0 & cuda 9.0 solved the problem. 
+We observed a drastic memory increase taken by the python process during training on a Ubuntu workstation with pytorch 0.4.0/0.4.1. An update to pytorch 1.1.0 solved the problem. 
 
 
 ## Citation
