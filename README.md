@@ -78,6 +78,7 @@ Then compile `pointsor.cpp` (enter the codes' folder and run `mex pointsor.cpp`)
 
 ## 3. Training
 Run `train_2steps.bat` to get the model in the paper. Or run `train_step1.py` and `train_step2.py` sequentially by hand. <br>
+
 (Optional) One can try squared L2 smoothness loss by running `train.py`. 
 
 
