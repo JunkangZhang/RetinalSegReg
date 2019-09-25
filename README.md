@@ -96,7 +96,7 @@ We observed a drastic memory increase taken by the python process during trainin
 
 ## Citation <a name="citation"></a>
 ```
-@inproceedings{Zhang:2019:ICIP:Retinal,
+@inproceedings{Zhang2019ICIP_Retinal,
   author={Junkang Zhang and Cheolhong An and Ji Dai and Manuel Amador and Dirk-Uwe Bartsch and Shyamanga Borooah and William R. Freeman and Truong Q. Nguyen},
   booktitle={2019 IEEE International Conference on Image Processing (ICIP)},
   title={Joint Vessel Segmentation and Deformable Registration on Multi-Modal Retinal Images Based on Style Transfer},
