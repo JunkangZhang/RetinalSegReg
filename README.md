@@ -32,7 +32,7 @@ pytorch (Version 0.4.1 was used for this project. Version 1.1.0 should also work
 [pytorch_ssim](https://github.com/Po-Hsun-Su/pytorch-ssim) ([instructions](https://github.com/JunkangZhang/RetinalSegReg/blob/master/pytorch_ssim/readme.md)) <br>
 
 **Requirements (optional)**: <br>
-scikit-image (for Dice_s) <br>
+scikit-image (0.14.x or before, for Dice_s) <br>
 MATLAB (for Dice & Phase+MIND) <br>
 
 **Hardwares**: <br>
@@ -91,8 +91,8 @@ One can try squared L2 smoothness loss by running `train.py`. <br>
 
 
 ## Possible issues & solutions <a name="solutions"></a>
-We observed a drastic memory increase taken by the python process during training on a Ubuntu workstation with pytorch 0.4.0/0.4.1. An update to pytorch 1.1.0 solved the problem. 
-
++ We observed a drastic memory increase taken by the python process during training on a Ubuntu workstation with pytorch 0.4.0/0.4.1. An update to pytorch 1.1.0 solved the problem. 
++ Using scikit-image >= 0.15.x will lead to different Dice_s results when running 'dice_s.py'. Please use 0.14.x instead. 
 
 ## Citation <a name="citation"></a>
 ```
